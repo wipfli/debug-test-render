@@ -93,13 +93,35 @@
             "regressions/mapbox-gl-js#6806"
         ]
 
-        const name = document.createElement('h1')
-        name.innerHTML = tests[0]
-        document.getElementById('root').appendChild(name)
-        const img = document.createElement('img')
-        img.src = `test/integration/render-tests/${tests[0]}/diff.png`
-        document.getElementById('root').appendChild(img)
+        const test = tests[0]
 
+        const name = document.createElement('h1')
+        name.innerHTML = test
+        document.getElementById('root').appendChild(name)
+        
+        const expected = document.createElement('h3')
+        expected.innerHTML = 'expected:'
+        document.getElementById('root').appendChild(expected)
+        
+        const expectedImg = document.createElement('img')
+        expectedImg.src = `test/integration/render-tests/${test}/expected.png`
+        document.getElementById('root').appendChild(expectedImg)
+
+        const actual = document.createElement('h3')
+        actual.innerHTML = 'actual:'
+        document.getElementById('root').appendChild(actual)
+        
+        const actualImg = document.createElement('img')
+        actualImg.src = `test/integration/render-tests/${test}/actual.png`
+        document.getElementById('root').appendChild(actualImg)
+        
+        const diff = document.createElement('h3')
+        diff.innerHTML = 'diff:'
+        document.getElementById('root').appendChild(diff)
+        
+        const diffImg = document.createElement('img')
+        diffImg.src = `test/integration/render-tests/${test}/diff.png`
+        document.getElementById('root').appendChild(diffImg)
     </script>
 
 </body>
