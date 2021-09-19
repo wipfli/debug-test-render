@@ -100,6 +100,11 @@
             name.innerHTML = test
             document.getElementById('root').appendChild(name)
             
+            const style = document.createElement('a')
+            style.innerHTML = 'style.json'
+            style.href = `test/integration/render-tests/${test}/style.json`
+            document.getElementById('root').appendChild(style)
+
             const expected = document.createElement('h3')
             expected.innerHTML = 'expected:'
             document.getElementById('root').appendChild(expected)
