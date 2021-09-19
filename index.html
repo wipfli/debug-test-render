@@ -5,81 +5,98 @@
     <meta charset="utf-8" />
     <title>Display a map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <script src="https://unpkg.com/maplibre-gl@2.0.0-pre.4/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@2.0.0-pre.4/dist/maplibre-gl.css" rel="stylesheet" />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="map"></div>
+    <div id="root"></div>
     <script>
+        const tests = [
+            "debug/overdraw",
+            "debug/padding/ease-to-top-distort",
+            "debug/raster",
+            "debug/tile-overscaled",
+            "extent/1024-line",
+            "fill-extrusion-opacity/function",
+            "fill-extrusion-opacity/literal",
+            "fill-extrusion-pattern/2x-on-1x-add-image-dds",
+            "fill-extrusion-translate/literal-opacity",
+            "fill-opacity/overlapping",
+            "image/raster-resampling",
+            "line-blur/default",
+            "line-blur/literal",
+            "line-blur/property-function",
+            "line-color/property-function",
+            "line-dasharray/case/butt",
+            "line-dasharray/function/line-width-constant",
+            "line-dasharray/long-segment",
+            "line-dasharray/zoom-history",
+            "line-gap-width/property-function",
+            "line-gradient/gradient-shared-source",
+            "line-gradient/gradient-step-zoomed-cross-continental",
+            "line-gradient/gradient-step",
+            "line-gradient/gradient",
+            "line-gradient/translucent",
+            "line-offset/default",
+            "line-offset/function",
+            "line-offset/literal-negative",
+            "line-offset/literal",
+            "line-offset/property-function",
+            "line-opacity/property-function",
+            "line-pattern/overscaled",
+            "line-sort-key/literal",
+            "line-translate-anchor/map",
+            "line-translate-anchor/viewport",
+            "line-translate/default",
+            "line-translate/function",
+            "line-translate/literal",
+            "line-triangulation/default",
+            "line-triangulation/round",
+            "line-visibility/visible",
+            "line-width/default",
+            "line-width/property-function",
+            "raster-alpha/default",
+            "raster-brightness/default",
+            "raster-brightness/literal",
+            "raster-contrast/default",
+            "raster-contrast/function",
+            "raster-contrast/literal",
+            "raster-extent/maxzoom",
+            "raster-hue-rotate/default",
+            "raster-hue-rotate/function",
+            "raster-hue-rotate/literal",
+            "raster-loading/missing",
+            "raster-masking/overlapping-vector",
+            "raster-masking/overlapping-zoom",
+            "raster-opacity/default",
+            "raster-opacity/function",
+            "raster-opacity/literal",
+            "raster-resampling/default",
+            "raster-resampling/function",
+            "raster-resampling/literal",
+            "raster-rotation/0",
+            "raster-rotation/180",
+            "raster-rotation/270",
+            "raster-rotation/45",
+            "raster-rotation/90",
+            "raster-saturation/default",
+            "raster-saturation/function",
+            "raster-saturation/literal",
+            "raster-visibility/visible",
+            "real-world/bangkok",
+            "real-world/nepal",
+            "real-world/norway",
+            "real-world/sanfrancisco",
+            "regressions/mapbox-gl-js#3612",
+            "regressions/mapbox-gl-js#5544",
+            "regressions/mapbox-gl-js#5546",
+            "regressions/mapbox-gl-js#6649",
+            "regressions/mapbox-gl-js#6806"
+        ]
 
-        var style = {
-            "version": 8,
-            "metadata": {
-                "test": {
-                    "height": 100,
-                    "width": 100
-                }
-            },
-            "center": [
-                0,
-                0
-            ],
-            "zoom": 18,
-            "sources": {
-                "line": {
-                    "type": "geojson",
-                    "maxzoom": 10,
-                    "data": {
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "LineString",
-                            "coordinates": [[-180, 70], [0, 0], [100, 80]]
-                        }
-                    }
-                }
-            },
-            "layers": [
-                {
-                    "id": "background",
-                    "type": "background",
-                    "paint": {
-                        "background-color": "white"
-                    }
-                },
-                {
-                    "id": "road",
-                    "type": "line",
-                    "source": "line",
-                    "paint": {
-                        "line-width": 20,
-                        "line-color": "#000"
-                    }
-                }
-            ]
-        }
-
-        var map = new maplibregl.Map({
-            container: 'map', // container id
-            style: style,
-            center: [-74.5, 40], // starting position [lng, lat]
-            zoom: 9 // starting zoom
-        });
     </script>
 
 </body>
+
+
 
 </html>
