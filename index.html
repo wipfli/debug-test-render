@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <h1>Test Render</h1>
+    <p>Output was generated with <a href="https://github.com/maplibre/maplibre-gl-js/tree/37bcaf52b13ce4cad4307521f0a68a80bed801fb">37bcaf5</a>.</p>
     <div id="root"></div>
     <script>
         const tests = [
@@ -93,35 +95,40 @@
             "regressions/mapbox-gl-js#6806"
         ]
 
-        const test = tests[0]
+        for (const test in tests) {
+            const name = document.createElement('h1')
+            name.innerHTML = test
+            document.getElementById('root').appendChild(name)
+            
+            const style = document.createElement('a')
+            style.innerHTML = 'style.json'
+            style.href = `test/integration/render-tests/${test}/style.json`
+            document.getElementById('root').appendChild(style)
 
-        const name = document.createElement('h1')
-        name.innerHTML = test
-        document.getElementById('root').appendChild(name)
-        
-        const expected = document.createElement('h3')
-        expected.innerHTML = 'expected:'
-        document.getElementById('root').appendChild(expected)
-        
-        const expectedImg = document.createElement('img')
-        expectedImg.src = `test/integration/render-tests/${test}/expected.png`
-        document.getElementById('root').appendChild(expectedImg)
+            const expected = document.createElement('h3')
+            expected.innerHTML = 'expected:'
+            document.getElementById('root').appendChild(expected)
+            
+            const expectedImg = document.createElement('img')
+            expectedImg.src = `test/integration/render-tests/${test}/expected.png`
+            document.getElementById('root').appendChild(expectedImg)
 
-        const actual = document.createElement('h3')
-        actual.innerHTML = 'actual:'
-        document.getElementById('root').appendChild(actual)
-        
-        const actualImg = document.createElement('img')
-        actualImg.src = `test/integration/render-tests/${test}/actual.png`
-        document.getElementById('root').appendChild(actualImg)
-        
-        const diff = document.createElement('h3')
-        diff.innerHTML = 'diff:'
-        document.getElementById('root').appendChild(diff)
-        
-        const diffImg = document.createElement('img')
-        diffImg.src = `test/integration/render-tests/${test}/diff.png`
-        document.getElementById('root').appendChild(diffImg)
+            const actual = document.createElement('h3')
+            actual.innerHTML = 'actual:'
+            document.getElementById('root').appendChild(actual)
+            
+            const actualImg = document.createElement('img')
+            actualImg.src = `test/integration/render-tests/${test}/actual.png`
+            document.getElementById('root').appendChild(actualImg)
+            
+            const diff = document.createElement('h3')
+            diff.innerHTML = 'diff:'
+            document.getElementById('root').appendChild(diff)
+            
+            const diffImg = document.createElement('img')
+            diffImg.src = `test/integration/render-tests/${test}/diff.png`
+            document.getElementById('root').appendChild(diffImg)
+        }
     </script>
 
 </body>
