@@ -95,7 +95,7 @@
             "regressions/mapbox-gl-js#6806"
         ]
 
-        for (const test in tests) {
+        tests.forEach(test => {
             const name = document.createElement('h1')
             name.innerHTML = test
             document.getElementById('root').appendChild(name)
@@ -128,7 +128,7 @@
             const diffImg = document.createElement('img')
             diffImg.src = `test/integration/render-tests/${test}/diff.png`
             document.getElementById('root').appendChild(diffImg)
-        }
+        })
     </script>
 
 </body>
