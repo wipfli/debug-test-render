@@ -93,6 +93,9 @@
             "regressions/mapbox-gl-js#6806"
         ]
 
+        const name = document.createElement('span')
+        name.innerHTML = tests[0]
+        document.getElementById('root').appendChild(name)
         const img = document.createElement('img')
         img.src = `test/integration/render-tests/${tests[0]}/diff.png`
         document.getElementById('root').appendChild(img)
