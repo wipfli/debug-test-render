@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Display a map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+
+<body>
+    <h1>Test Render</h1>
+    <p>Output was generated with <a href="https://github.com/maplibre/maplibre-gl-js/tree/37bcaf52b13ce4cad4307521f0a68a80bed801fb">37bcaf5</a>.</p>
+    <div id="root"></div>
+    <script>
+        const tests = [
+            "debug/overdraw",
+            "debug/padding/ease-to-top-distort",
+            "debug/raster",
+            "debug/tile-overscaled",
+            "extent/1024-line",
+            "fill-extrusion-opacity/function",
+            "fill-extrusion-opacity/literal",
+            "fill-extrusion-pattern/2x-on-1x-add-image-dds",
+            "fill-extrusion-translate/literal-opacity",
+            "fill-opacity/overlapping",
+            "image/raster-resampling",
+            "line-blur/default",
+            "line-blur/literal",
+            "line-blur/property-function",
+            "line-color/property-function",
+            "line-dasharray/case/butt",
+            "line-dasharray/function/line-width-constant",
+            "line-dasharray/long-segment",
+            "line-dasharray/zoom-history",
+            "line-gap-width/property-function",
+            "line-gradient/gradient-shared-source",
+            "line-gradient/gradient-step-zoomed-cross-continental",
+            "line-gradient/gradient-step",
+            "line-gradient/gradient",
+            "line-gradient/translucent",
+            "line-offset/default",
+            "line-offset/function",
+            "line-offset/literal-negative",
+            "line-offset/literal",
+            "line-offset/property-function",
+            "line-opacity/property-function",
+            "line-pattern/overscaled",
+            "line-sort-key/literal",
+            "line-translate-anchor/map",
+            "line-translate-anchor/viewport",
+            "line-translate/default",
+            "line-translate/function",
+            "line-translate/literal",
+            "line-triangulation/default",
+            "line-triangulation/round",
+            "line-visibility/visible",
+            "line-width/default",
+            "line-width/property-function",
+            "raster-alpha/default",
+            "raster-brightness/default",
+            "raster-brightness/literal",
+            "raster-contrast/default",
+            "raster-contrast/function",
+            "raster-contrast/literal",
+            "raster-extent/maxzoom",
+            "raster-hue-rotate/default",
+            "raster-hue-rotate/function",
+            "raster-hue-rotate/literal",
+            "raster-loading/missing",
+            "raster-masking/overlapping-vector",
+            "raster-masking/overlapping-zoom",
+            "raster-opacity/default",
+            "raster-opacity/function",
+            "raster-opacity/literal",
+            "raster-resampling/default",
+            "raster-resampling/function",
+            "raster-resampling/literal",
+            "raster-rotation/0",
+            "raster-rotation/180",
+            "raster-rotation/270",
+            "raster-rotation/45",
+            "raster-rotation/90",
+            "raster-saturation/default",
+            "raster-saturation/function",
+            "raster-saturation/literal",
+            "raster-visibility/visible",
+            "real-world/bangkok",
+            "real-world/nepal",
+            "real-world/norway",
+            "real-world/sanfrancisco",
+            "regressions/mapbox-gl-js#3612",
+            "regressions/mapbox-gl-js#5544",
+            "regressions/mapbox-gl-js#5546",
+            "regressions/mapbox-gl-js#6649",
+            "regressions/mapbox-gl-js#6806"
+        ]
+
+        tests.forEach(test => {
+            const name = document.createElement('h1')
+            name.innerHTML = test
+            document.getElementById('root').appendChild(name)
+            
+            const style = document.createElement('a')
+            style.innerHTML = 'style.json'
+            style.href = `test/integration/render-tests/${test}/style.json`
+            document.getElementById('root').appendChild(style)
+
+            const expected = document.createElement('h3')
+            expected.innerHTML = 'expected:'
+            document.getElementById('root').appendChild(expected)
+            
+            const expectedImg = document.createElement('img')
+            expectedImg.src = `test/integration/render-tests/${test}/expected.png`
+            document.getElementById('root').appendChild(expectedImg)
+
+            const actual = document.createElement('h3')
+            actual.innerHTML = 'actual:'
+            document.getElementById('root').appendChild(actual)
+            
+            const actualImg = document.createElement('img')
+            actualImg.src = `test/integration/render-tests/${test}/actual.png`
+            document.getElementById('root').appendChild(actualImg)
+            
+            const diff = document.createElement('h3')
+            diff.innerHTML = 'diff:'
+            document.getElementById('root').appendChild(diff)
+            
+            const diffImg = document.createElement('img')
+            diffImg.src = `test/integration/render-tests/${test}/diff.png`
+            document.getElementById('root').appendChild(diffImg)
+        })
+    </script>
+
+</body>
+
+
+
+</html>
