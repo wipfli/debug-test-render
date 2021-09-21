@@ -9,13 +9,14 @@
 
 <body>
     <h1>Test Render</h1>
-    <p>Output was generated with <a href="https://github.com/maplibre/maplibre-gl-js/tree/37bcaf52b13ce4cad4307521f0a68a80bed801fb">37bcaf5</a>.</p>
+    <p>Output was generated with <a
+            href="https://github.com/maplibre/maplibre-gl-js/tree/a12092bdcaa09732f34ad537a5d2e83523d8e7b8">a12092b</a>.
+    </p>
     <div id="root"></div>
     <script>
         const tests = [
             "debug/overdraw",
             "debug/padding/ease-to-top-distort",
-            "debug/raster",
             "debug/tile-overscaled",
             "extent/1024-line",
             "fill-extrusion-opacity/function",
@@ -23,7 +24,6 @@
             "fill-extrusion-pattern/2x-on-1x-add-image-dds",
             "fill-extrusion-translate/literal-opacity",
             "fill-opacity/overlapping",
-            "image/raster-resampling",
             "line-blur/default",
             "line-blur/literal",
             "line-blur/property-function",
@@ -56,50 +56,53 @@
             "line-visibility/visible",
             "line-width/default",
             "line-width/property-function",
-            "raster-alpha/default",
-            "raster-brightness/default",
-            "raster-brightness/literal",
-            "raster-contrast/default",
-            "raster-contrast/function",
-            "raster-contrast/literal",
-            "raster-extent/maxzoom",
-            "raster-hue-rotate/default",
-            "raster-hue-rotate/function",
-            "raster-hue-rotate/literal",
-            "raster-loading/missing",
             "raster-masking/overlapping-vector",
             "raster-masking/overlapping-zoom",
-            "raster-opacity/default",
-            "raster-opacity/function",
-            "raster-opacity/literal",
-            "raster-resampling/default",
-            "raster-resampling/function",
-            "raster-resampling/literal",
-            "raster-rotation/0",
-            "raster-rotation/180",
-            "raster-rotation/270",
-            "raster-rotation/45",
-            "raster-rotation/90",
-            "raster-saturation/default",
-            "raster-saturation/function",
-            "raster-saturation/literal",
-            "raster-visibility/visible",
             "real-world/bangkok",
             "real-world/nepal",
             "real-world/norway",
             "real-world/sanfrancisco",
-            "regressions/mapbox-gl-js#3612",
             "regressions/mapbox-gl-js#5544",
             "regressions/mapbox-gl-js#5546",
             "regressions/mapbox-gl-js#6649",
-            "regressions/mapbox-gl-js#6806"
+            "regressions/mapbox-gl-js#6806",
+            "regressions/mapbox-gl-native#9976",
+            "symbol-cross-fade/chinese",
+            "symbol-placement/line-center-buffer",
+            "symbol-placement/line-center",
+            "text-field/formatted-images-vertical",
+            "text-writing-mode/line_label/chinese-punctuation",
+            "text-writing-mode/line_label/chinese",
+            "text-writing-mode/line_label/latin",
+            "text-writing-mode/line_label/mixed",
+            "text-writing-mode/point_label/cjk-arabic-vertical-mode",
+            "text-writing-mode/point_label/cjk-horizontal-vertical-mode",
+            "text-writing-mode/point_label/cjk-multiline-vertical-horizontal-mode",
+            "text-writing-mode/point_label/cjk-punctuation-vertical-mode",
+            "text-writing-mode/point_label/cjk-variable-anchors-vertical-horizontal-mode-icon-text-fit",
+            "text-writing-mode/point_label/cjk-variable-anchors-vertical-horizontal-mode",
+            "text-writing-mode/point_label/cjk-variable-anchors-vertical-mode",
+            "text-writing-mode/point_label/cjk-vertical-horizontal-mode",
+            "text-writing-mode/point_label/cjk-vertical-mode",
+            "text-writing-mode/point_label/mixed-multiline-vertical-horizontal-mode-icon-text-fit",
+            "text-writing-mode/point_label/mixed-multiline-vertical-horizontal-mode",
+            "tilejson-bounds/default",
+            "tilejson-bounds/overwrite-bounds",
+            "within/filter-with-inlined-geojson",
+            "within/layout-text",
+            "within/paint-circle",
+            "within/paint-icon",
+            "within/paint-text",
+            "within/within-feature-geojson",
+            "within/within-in-complex-filter"
+
         ]
 
         tests.forEach(test => {
             const name = document.createElement('h1')
             name.innerHTML = test
             document.getElementById('root').appendChild(name)
-            
+
             const style = document.createElement('a')
             style.innerHTML = 'style.json'
             style.href = `test/integration/render-tests/${test}/style.json`
@@ -108,7 +111,7 @@
             const expected = document.createElement('h3')
             expected.innerHTML = 'expected:'
             document.getElementById('root').appendChild(expected)
-            
+
             const expectedImg = document.createElement('img')
             expectedImg.src = `test/integration/render-tests/${test}/expected.png`
             document.getElementById('root').appendChild(expectedImg)
@@ -116,15 +119,15 @@
             const actual = document.createElement('h3')
             actual.innerHTML = 'actual:'
             document.getElementById('root').appendChild(actual)
-            
+
             const actualImg = document.createElement('img')
             actualImg.src = `test/integration/render-tests/${test}/actual.png`
             document.getElementById('root').appendChild(actualImg)
-            
+
             const diff = document.createElement('h3')
             diff.innerHTML = 'diff:'
             document.getElementById('root').appendChild(diff)
-            
+
             const diffImg = document.createElement('img')
             diffImg.src = `test/integration/render-tests/${test}/diff.png`
             document.getElementById('root').appendChild(diffImg)
