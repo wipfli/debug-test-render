@@ -3,3 +3,4 @@ MapLibre render test debugging. See [https://github.com/maplibre/maplibre-gl-js/
 
 * [https://wipfli.github.io/debug-test-render/37bcaf5](https://wipfli.github.io/debug-test-render/37bcaf5)
 * [https://wipfli.github.io/debug-test-render/a12092b](https://wipfli.github.io/debug-test-render/a12092b)
+* [https://wipfli.github.io/debug-test-render/0018514](https://wipfli.github.io/debug-test-render/0018514)
